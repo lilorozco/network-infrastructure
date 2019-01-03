@@ -1,0 +1,22 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="network-infrastructure" audience="service" arm="4135753" href="/docs/infrastructure/network-infrastructure/getting-started.html" path="infrastructure/network-infrastructure"}
+Network Infrastructure
+
+    {: .navgroup id="learn"}
+    getting-started.md
+    understanding-sdn.md
+    improving-cloud-performance.md
+    qemu.md
+    libvirt.md
+    load-balancer.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    related-links.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    other-resources.md
+    {: .navgroup-end}
