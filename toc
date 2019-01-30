@@ -10,7 +10,6 @@ Network Infrastructure
     improving-cloud-performance.md
     qemu.md
     libvirt.md
-    load-balancer.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -19,4 +18,5 @@ Network Infrastructure
 
     {: .navgroup id="reference"}
     other-resources.md
+    communication-protocols.md
     {: .navgroup-end}
