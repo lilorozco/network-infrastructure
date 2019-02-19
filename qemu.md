@@ -1,10 +1,9 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017-2019
 
 lastupdated: "2018-12-19"
-
 
 ---
 
@@ -57,7 +56,7 @@ If you take a look at qemu disk space help, you can see that QEMU actually suppo
 * thin provisioning
 * tiered storage
 
-For example, a modern storage solution such as Ceph RBD (RADOS Block Device) combines the rich storage features above with network accessibility, thus providing optimizations in speed, resiliency, and redundancy while still allowing remote access. As a further optimization on cloud storage solutions, one can remove QEMU entirely from the I/O path to optimize guest-to-I/O performance. We will cover that topic in [a subsequent article]().
+For example, a modern storage solution such as Ceph RBD (RADOS Block Device) combines the rich storage features above with network accessibility, thus providing optimizations in speed, resiliency, and redundancy while still allowing remote access. As a further optimization on cloud storage solutions, one can remove QEMU entirely from the I/O path to optimize guest-to-I/O performance. We will cover that topic in [a subsequent article](/docs/infrastructure/network-infrastructure?topic=network-infrastructure-qemu-kvm-xen-and-libvirt).
 
 ## Virtualized servers nearly equal to bare metal server performance
 

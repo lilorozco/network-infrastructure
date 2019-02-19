@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017-2019
-lastupdated: "2018-01-03"
+lastupdated: "2019-02-03"
 
 ---
 
@@ -19,12 +19,12 @@ lastupdated: "2018-01-03"
 
 You'll find the task-specific IBM Cloud core network infrastructure documentation in these related links:
 
-* [VLANs](https://{DomainName}/docs/infrastructure/vlans/getting-started.html)
+* [VLANs](/docs/infrastructure/vlans?topic=vlans-getting-started-with-vlans)
 
-* [IaaS-VPN](https://{DomainName}/docs/infrastructure/iaas-vpn/getting-started.html)
+* [IaaS-VPN](/docs/infrastructure/iaas-vpn?topic=VPN-getting-started-with-virtual-private-networking-vpn-)
 
-* [Subnets](https://{DomainName}/docs/infrastructure/subnets/getting-started.html)
+* [Subnets](/docs/infrastructure/subnets?topic=subnets-getting-started-with-subnets-and-ips)
 
-* [DNS](https://{DomainName}/docs/infrastructure/dns/getting-started.html)
+* [DNS](/docs/infrastructure/dns?topic=dns-getting-started-with-dns)
 
-* [Network Tools](https://{DomainName}/docs/infrastructure/network-tools/getting-started.html)
+* [Network Tools](/docs/infrastructure/network-tools?topic=network-tools-getting-started-with-network-tools)

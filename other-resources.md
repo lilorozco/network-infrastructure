@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-04"
+lastupdated: "2019-02-03"
 
 ---
 
@@ -19,21 +19,21 @@ lastupdated: "2019-01-04"
 
 For more information about IBM Cloud Network Infrastructure, here are some links to related concept documents:
 
-* [Understanding latency](https://{DomainName}/docs/infrastructure/direct-link/understanding-latency.html#understanding-latency)
+* [Understanding latency](/docs/infrastructure/direct-link?topic=direct-link-understanding-latency)
 
-* [Overview of Virtual Routing and Forwarding on IBM Cloud](https://{DomainName}/docs/infrastructure/direct-link/vrf-on-ibm-cloud.html#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud)
+* [Overview of Virtual Routing and Forwarding on IBM Cloud](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud)
 
 IBM Cloud solution tutorials are another source of information regarding network infrastructure. Here are some to get you started:
 
-* [Isolate workloads in a secure private network](https://cloud.ibm.com/docs/tutorials/secure-network-enclosure.html#isolate-workloads-with-a-secure-private-network)
+* [Isolate workloads in a secure private network](/docs/tutorials?topic=solution-tutorials-secure-network-enclosure)
 
-* [BYOIP](https://cloud.ibm.com/docs/tutorials/byoip.html#bring-your-own-ip-address)
+* [BYOIP](/docs/tutorials?topic=solution-tutorials-byoip)
 
-* [Configure NAT for Internet access from a private network](https://cloud.ibm.com/docs/tutorials/nat-config-private.html#configure-nat-for-internet-access-from-a-private-network)
+* [Configure NAT for Internet access from a private network](/docs/tutorials?topic=solution-tutorials-nat-config-private)
 
-* [VPN into a secure private network](https://cloud.ibm.com/docs/tutorials/configuring-IPSEC-VPN.html#vpn-into-a-secure-private-network)
+* [VPN into a secure private network](/docs/tutorials?topic=solution-tutorials-configuring-IPSEC-VPN)
 
-* [Serving a Web application from a secure private network](https://cloud.ibm.com/docs/tutorials/web-app-private-network.html#web-application-serving-from-a-secure-private-network)
+* [Serving a Web application from a secure private network](/docs/tutorials?topic=solution-tutorials-web-app-private-network)
 
-* [Linking secure private networks over the IBM network](https://cloud.ibm.com/docs/tutorials/vlan-spanning.html#linking-secure-private-networks-over-the-ibm-network)
+* [Linking secure private networks over the IBM network](/docs/tutorials?topic=solution-tutorials-vlan-spanning#)
 
