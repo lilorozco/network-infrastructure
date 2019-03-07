@@ -3,8 +3,11 @@
 copyright:
   years: 2017-2019
 
-lastupdated: "2019-02-03"
+lastupdated: "2019-03-06"
 
+keywords: QEMU, virtio, vhost, sr-iov 
+
+subcollection: network-infrastructure
 
 ---
 
@@ -18,6 +21,7 @@ lastupdated: "2019-02-03"
 {:download: .download}
 
 # Improving Cloud Performance
+{:#network-infrastructure-improving-cloud-performance}
 
 This document covers more cloud fundamentals: More about QEMU, and lots more about how to improve your cloud’s overall workload performance.
 
@@ -32,12 +36,14 @@ There are two paths for improving I/O performance with virtualization: a softwar
 The software path involves virtualizing the “traditional” devices and their drivers more efficiently. The hardware path involves linking devices more directly to the VMs, and possibly even using specialized hardware that implements a feature called Single Root IO Virtualization (SR-IOV). That’s essentially a hardware-assisted path for rapidly pairing up VMs with virtualized devices that can be instantiated as needed.
 
 ## The Software Path: QEMU, ‘virtio,’ and ‘vhost’
+{:#software-path-qemu-virtio-vhost}
 
 As we covered in [QEMU, the basic virtual machine](/docs/infrastructure/network-infrastructure?topic=network-infrastructure-qemu-the-basic-virtual-machine), QEMU was designed to operate as an emulator, which can even emulate historic operating systems such as Windows NT and OS/2. It emulates whatever hardware the operating system expects to find; therefore, the default devices it exposes are “common” physical hardware devices. But the method that the operating system uses to communicate with these devices was not designed with virtualization in mind!
 
 Older I/O devices typically were not general-purpose processors, and they were slower. Thus, in the old “hardware” days, there was little benefit to optimizing I/O performance. For example, physical disks take a significant amount of time (4ms) to access a location on a disk, so there would be little benefit to optimizing communications between the driver and the disk controller. In a modern cloud, with VMs as servers, significant benefits arise from improving I/O performance, and it can be accomplished in well-understood ways.
 
 ### Why does I/O virtualization help?
+{:#why-does-io-virtualization-help}
 
 To perform efficient I/O, your cloud system requires (1) a driver for the guest VM, (2) some additional backend in the host software (e.g. QEMU) that provides the I/O device, and finally, (3) the interfaces that the host software uses to communicate with the underlying I/O device.
 
@@ -58,20 +64,24 @@ As you can see in the figure, several components get involved in fulfilling an I
 How can we speed this process up? Two good options exist. First, we could more efficiently virtualize the way we emulate any particular device. That option is generally referred to as “paravirtualized drivers,” and the best example of that is something called `virtio,` which has been incorporated into OpenStack Nova. Second, for further performance improvements, we can eliminate another transition by removing device emulation from the VM completely. That is, we take QEMU’s “device emulation” out of the guest VM, and limit it to the host operating system.
 
 #### Optimization 1: Paravirtualized drivers: The virtio approach
+{:#paravirtualized-drivers-virtio}
 
 **Virtio** is a family of virtualized devices that are exposed by QEMU, along with their corresponding drivers, within a VM’s operating system. These drivers optimize the interface between the guest VM driver and QEMU by using modern, efficient data structures, such as ring buffers, rather than slavishly emulating the interface of an existing hardware device. Using virtio, the VM communicates more efficiently with QEMU, thereby improving I/O performance.
 
 As a caveat, **virtio** requires guest VM images to include these faster **virtio** drivers, so some older images (e.g. Windows 95 or 98) may not work with virtio. Fortunately, most operating systems now include **virtio** drivers by default, and they have done so since about 2013.
 
 #### Optimization 2: Vhost (Removing the QEMU userspace device model)
+{:#vhost-removing-qemu-userspace-device}
 
 The next performance optimization consists of moving the `virtio` device emulation capability out of the VM altogether, and into the host operating system kernel. This move avoids the performance penalty associated with the transitions from KVM to QEMU and back to the host kernel.
 
 ## The Hardware Path: PCI passthrough and SR-IOV
+{:#hardware-path-pci-passthrough-sr-iov}
 
 PCI passthrough is a generic mechanism that can apply to any PCI device. It offers an alternative to the types of software virtualization of devices and drivers that we described in the previous sections. In contrast to `virtio` and `vhost`, PCI passthrough exposes a hardware I/O device directly to the guest VM, thereby removing QEMU and the host kernel from the I/O path altogether, and eliminating the performance penalties of these software-emulation transitions.
 
 ### PCI passthrough 
+{:#hardware-path-pci-passthrough}
 
 PCI passthrough is a good alternative for creating improved performance in many use cases.
 
@@ -86,11 +96,13 @@ PCI passthrough is a good alternative for creating improved performance in many 
 It’s important to remember that PCI passthrough requires a dedicated I/O device for each guest VM. This requirement to have dedicated hardware for each VM reduces the flexibility that comes from virtualization, and it significantly increases cost. Luckily, some newer types of hardware are available, which can mitigate cost through built-in, hardware-assisted presentation of virtualied PCI devices. It’s a technique called SR-IOV.
 
 ### SR-IOV
+{:#hardware-path-sr-iov}
 
 Newer, high-end network interfaces and disk controllers include SR-IOV (single root I/O virtualization). Essentially, these hardware devices can present themselves as multiple PCI devices, each of which can be attached to a VM. In a typical deployment, there would be a main one, a parent (or PF), and then one or more logical devices known as virtual function units (VFs). By configuring the PF, additional VF devices can be created along with their associated resources. Then, these VFs can be attached to individual VMs by means of PCI passthrough.
 
 Potentially, you could use PCI passthrough for two I/O devices per guest VM: a network interface and disk controller. For example, with two SR-IOV devices, you could gain I/O performance improvement both for network and for storage.
 
 ## Summary
+{:#network-infrastructure-improving-cloud-performance-summary}
 
 You can improve your cloud’s workload performance by using either path we’ve described here, the software path or the hardware path. There’s an optimized software path with **virtio** and **vhost**, and a hardware-assisted optimized path that uses PCI passthrough and SR-IOV.

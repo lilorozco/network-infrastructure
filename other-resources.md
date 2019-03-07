@@ -1,8 +1,13 @@
 ---
 
 copyright:
-  years: 2017, 2018, 2019
-lastupdated: "2019-02-03"
+  years: 2017-2019
+
+lastupdated: "2019-03-06"
+
+keywords: understanding latency, virtual routing, byoip, private network, NAT
+
+subcollection: network-infrastructure
 
 ---
 
@@ -16,6 +21,7 @@ lastupdated: "2019-02-03"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Other resources
+{:#network-infrastructure-other-resources}
 
 For more information about IBM Cloud Network Infrastructure, here are some links to related concept documents:
 

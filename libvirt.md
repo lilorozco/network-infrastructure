@@ -2,7 +2,12 @@
 
 copyright:
   years: 2017-2019
-lastupdated: "2019-02-03"
+
+lastupdated: "2019-03-06"
+
+keywords: QEMU, Xen, KVM, libvirt
+
+subcollection: network-infrastructure
 
 ---
 
@@ -16,6 +21,7 @@ lastupdated: "2019-02-03"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # QEMU, KVM, Xen and libvirt
+{:#qemu-kvm-xen-libvirt}
 
 We've looked at qemu and KVM, and their roles in the nucleus of any cloud. In this article, we will look at Xen, another hypervisor that can work well with qemu. It offers an alternative to KVM. We’ll also look at libvirt, a helpful abstraction layer for your cloud.  (Note that libvirt forms the basis for OpenStack Nova.)
 

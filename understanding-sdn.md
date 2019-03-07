@@ -1,10 +1,13 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017-2019
 
-lastupdated: "2018-12-19"
+lastupdated: "2019-03-06"
 
+keywords: software defined networking, SDN, Address Resolution Protocol, ARP
+
+subcollection: network-infrastructure
 
 ---
 
@@ -18,6 +21,7 @@ lastupdated: "2018-12-19"
 {:download: .download}
 
 # Understanding SDN
+{:#understanding-sdn}
 
 Within many “enterprise” data center networks and many next-generation wireless provider networks, there’s a shift going on from fully distributed networking control toward networked environments designed for centralized networking control using Software Defined Networking (SDN). This shift is arising in response to emergent complexity in network behavior, which can arise as a result of heavy network traffic combined with distributed local learning by routers and switches.  
 
@@ -26,6 +30,7 @@ These emergent complexities have an impact on Cloud network engineering, which i
 This document gives background information on why and how some choices for Software Defined Networking seem easy to make, but can lead to difficulty later. It offers some alternatives for creating stable and predictable network environments, based on known principles of behavior for simpler network hardware and software. Generally, it examines the best areas of applicability for SDN, and it describes how a user can select the right technologies to use with SDN.
 
 ## Background at Layer 2: Ethernet Switches
+{:#background-layer-2-ethernet-switches}
 
 Let’s review the design and operating principles of Ethernet Switches, as a starting point for understanding how complexity can develop rapidly in a busy network environment. We’ll include only the most salient features about switches. First, keep in mind that the Ethernet switch operates at the Layer-2 (L2) protocol level, which means that it works with MAC addresses, rather than IP addresses. Also, remember that at L2, datagrams are referred to as “frames,” whereas at Layer 3 (L3), they are referred to as “packets.” We’ll keep using this terminology later to keep the discussion more clear.
 
@@ -48,6 +53,7 @@ Emergent complexity can begin at L2 when there is congestion, usually due to hig
 Meanwhile, performance degradation and other problems can occur.
 
 ## Background at L3: ARP Messages
+{:#background-l3-arp-messages}
 
 Address Resolution Protocol, or ARP, works at Layer 3 (L3), using IP addresses to help handle packet routing among “neighbors” on a subnet.
 
@@ -86,6 +92,7 @@ MAC address to Port is 1-to-1 mapping, but MAC address to IP address can be one-
 On a busy subnet, there can be a lot of ARP requests! Each host remembers the addresses of its neighbors only up to 5 minutes. (That is to say, at L3, subnet neighbors “age out” as do MAC addresses on Ethernet switches at L2.) In fact, interesting behavior occurs on a subnet if your ARP and Ethernet switch port aging are set to the same value; one must be longer, or else you can end up with network traffic that is all broadcasts!
 
 ## Conjoining L2 and L3: Reasoning for SDN
+{:#conjoining-l2-l3}
 
 These systems of Ethernet switching and ARP requests work pretty well until there is too much broadcast traffic, or until there too many MAC addresses start talking on the network for the switches to accommodate all the addresses in their tables. (Many switches will begin flooding if they run out of slots for MAC addresses.) To get around these limitations, many data center designers break local networks up into smaller L2 segments and connect them with routers. In other words, they “conquer by dividing” the problem into smaller L2 domains.
 
@@ -98,6 +105,7 @@ For example, VxLAN is form of overlay whereby an encapsulation carries Ethernet 
 This situation applies to many private cloud deployments in IBM Cloud data centers. Because IBM infrastructure organizes the data centers into localized hardware “pods,” software defined overlay networks (SDN) must be deployed to connect any customer cloud deployments that have not been established within the same hardware pod. IBM Cloud has implemented many Software Defined Networking solutions that let customers connect their clouds together, thus creating many possible hybrid cloud solutions. (By hybrid cloud, we are referring to the ability to bind together two or more private or public clusters of computers, where those clusters each in turn are designed to create collections of virtual machines and their associated networks – that is, to combine multiple cloud environments.)
 
 ## Provisioning
+{:#network-infrastructure-provisioning}
 
 Sometimes we get questions from customers about the ultimate limitations of how many VLANs and VxLANs can be deployed at one time. Here is some basic information about provisioning:
 
@@ -109,7 +117,7 @@ In a standard configuration, a single fabric could support 3000+ customers, eac
 
 Within IBM Cloud, VLANs can be tracked with names reflecting the switch fabrics they are associated with, such as `VL###` (for example, `VL101`). To distinguish fabrics, they could be named `fabric1-VL101`, `fabric2-VL101`, etc.
 
-**Note:** Software Defined Networking (SDN) was developed as a way to define a set of policies in a central database, and then use computation to enforce these policies automatically. The term has come to be used more generally to refer to the use of network overlays.
+Software Defined Networking (SDN) was developed as a way to define a set of policies in a central database, and then use computation to enforce these policies automatically. The term has come to be used more generally to refer to the use of network overlays.
 {: note}
 
 Suggestion for further reading: https://en.wikipedia.org/wiki/Switched_fabric
