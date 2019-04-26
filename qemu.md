@@ -3,9 +3,9 @@
 copyright:
   years: 2017-2019
 
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-26"
 
-keywords: QEMU, Quick Emulator, virtual machine, Kernel Virtual Machine, KVM
+keywords: QEMU, Quick Emulator, virtual machine, Kernel Virtual Machine, KVM, network infrastructure
 
 subcollection: network-infrastructure
 
@@ -65,7 +65,7 @@ If you take a look at qemu disk space help, you can see that QEMU actually suppo
 * thin provisioning
 * tiered storage
 
-For example, a modern storage solution such as Ceph RBD (RADOS Block Device) combines the rich storage features above with network accessibility, thus providing optimizations in speed, resiliency, and redundancy while still allowing remote access. As a further optimization on cloud storage solutions, one can remove QEMU entirely from the I/O path to optimize guest-to-I/O performance. We will cover that topic in [a subsequent article](/docs/infrastructure/network-infrastructure?topic=network-infrastructure-qemu-kvm-xen-and-libvirt).
+For example, a modern storage solution such as Ceph RBD (RADOS Block Device) combines the rich storage features above with network accessibility, thus providing optimizations in speed, resiliency, and redundancy while still allowing remote access. As a further optimization on cloud storage solutions, one can remove QEMU entirely from the I/O path to optimize guest-to-I/O performance. We will cover that topic in [a subsequent article](/docs/infrastructure/network-infrastructure?topic=network-infrastructure-qemu-kvm-xen-libvirt).
 
 ## Virtualized servers nearly equal to bare metal server performance
 {:#virtualized-servers-equal-bare-metal-server-performance}

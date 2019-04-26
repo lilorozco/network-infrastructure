@@ -3,9 +3,9 @@
 copyright:
   years: 2017-2019
 
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-26"
 
-keywords: QEMU, Xen, KVM, libvirt
+keywords: QEMU, Xen, KVM, libvirt, network infrastructure
 
 subcollection: network-infrastructure
 
@@ -35,11 +35,11 @@ At a certain time in the market, it was unclear whether KVM or Xen would dominat
 
 **Here’s what you need to know about Xen**
 
-Xen differs from KVM mainly in that the host operating system (OS), such as Linux, also runs as a VM under the Xen hypervisor. The Xen hypervisor only virtualizes CPU and memory, and, like qemu, Xen can provide pass through to I/O devices, as discussed in [Improving Cloud Performance](/docs/infrastructure/network-infrastructure?topic=network-infrastructure-improving-cloud-performance).  
+Xen differs from KVM mainly in that the host operating system (OS), such as Linux, also runs as a VM under the Xen hypervisor. The Xen hypervisor only virtualizes CPU and memory, and, like qemu, Xen can provide pass through to I/O devices, as discussed in [Improving Cloud Performance](/docs/infrastructure/network-infrastructure?topic=network-infrastructure-network-infrastructure-improving-cloud-performance).  
 
 ![Comparing_QEMU_and_Xen](/images/qemu_vs_Xen.png)
 
-As the previous schematic figure illustrates, this architecture of Xen contrasts directly with the QEMU + KVM cloud model, which we explored in [QEMU, the basic virtual machine](/docs/infrastructure/network-infrastructure?topic=network-infrastructure-qemu-the-basic-virtual-machine).
+As the previous schematic figure illustrates, this architecture of Xen contrasts directly with the QEMU + KVM cloud model, which we explored in [QEMU, the basic virtual machine](/docs/infrastructure/network-infrastructure?topic=network-infrastructure-quemu-basic-virtual-machine).
 
 **Here’s what you need to know about libvirt: Three ways that libvirt builds you a cloud**
 

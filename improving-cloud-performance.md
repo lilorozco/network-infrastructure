@@ -3,9 +3,9 @@
 copyright:
   years: 2017-2019
 
-lastupdated: "2019-03-06"
+lastupdated: "2019-04-26"
 
-keywords: QEMU, virtio, vhost, sr-iov 
+keywords: QEMU, virtio, vhost, sr-iov, network infrastructure 
 
 subcollection: network-infrastructure
 
@@ -38,7 +38,7 @@ The software path involves virtualizing the “traditional” devices and their 
 ## The Software Path: QEMU, ‘virtio,’ and ‘vhost’
 {:#software-path-qemu-virtio-vhost}
 
-As we covered in [QEMU, the basic virtual machine](/docs/infrastructure/network-infrastructure?topic=network-infrastructure-qemu-the-basic-virtual-machine), QEMU was designed to operate as an emulator, which can even emulate historic operating systems such as Windows NT and OS/2. It emulates whatever hardware the operating system expects to find; therefore, the default devices it exposes are “common” physical hardware devices. But the method that the operating system uses to communicate with these devices was not designed with virtualization in mind!
+As we covered in [QEMU, the basic virtual machine](/docs/infrastructure/network-infrastructure?topic=network-infrastructure-quemu-basic-virtual-machine), QEMU was designed to operate as an emulator, which can even emulate historic operating systems such as Windows NT and OS/2. It emulates whatever hardware the operating system expects to find; therefore, the default devices it exposes are “common” physical hardware devices. But the method that the operating system uses to communicate with these devices was not designed with virtualization in mind!
 
 Older I/O devices typically were not general-purpose processors, and they were slower. Thus, in the old “hardware” days, there was little benefit to optimizing I/O performance. For example, physical disks take a significant amount of time (4ms) to access a location on a disk, so there would be little benefit to optimizing communications between the driver and the disk controller. In a modern cloud, with VMs as servers, significant benefits arise from improving I/O performance, and it can be accomplished in well-understood ways.
 
