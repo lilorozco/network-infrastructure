@@ -3,7 +3,7 @@
 copyright:
   years: 2017-2019
 
-lastupdated: "2019-04-26"
+lastupdated: "2019-07-29"
 
 keywords: VLANs, IaaS-VPN, Subnets, DNS, Network-tools
 
@@ -25,12 +25,12 @@ subcollection: network-infrastructure
 
 You'll find the task-specific IBM Cloud core network infrastructure documentation in these related links:
 
-* [VLANs](/docs/infrastructure/vlans?topic=vlans-getting-started-with-vlans)
+* [VLANs](/docs/infrastructure/vlans?topic=vlans-getting-started)
 
-* [IaaS-VPN](/docs/infrastructure/iaas-vpn?topic=VPN-gettingstarted-with-virtual-private-networking)
+* [IaaS-VPN](/docs/infrastructure/iaas-vpn?topic=VPN-getting-started)
 
-* [Subnets](/docs/infrastructure/subnets?topic=subnets-getting-started-subnets-ips)
+* [Subnets](/docs/infrastructure/subnets?topic=subnets-getting-started)
 
-* [DNS](/docs/infrastructure/dns?topic=dns-getting-started-with-dns)
+* [DNS](/docs/infrastructure/dns?topic=dns-getting-started)
 
-* [Network Tools](/docs/infrastructure/network-tools?topic=network-tools-gettingstarted-with-network-tools)
+* [Network Tools](/docs/infrastructure/network-tools?topic=network-tools-getting-started)
